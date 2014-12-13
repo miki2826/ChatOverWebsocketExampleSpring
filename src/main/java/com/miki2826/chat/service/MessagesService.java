@@ -10,16 +10,16 @@ import java.util.Set;
 
 /**
  * @author michaeld
+ * Simple service logic handling websocket connections and messages.
  */
 @Service
 public class MessagesService {
-
     private Set<WebSocketSession> connections = java.util.Collections.synchronizedSet(new HashSet<WebSocketSession>());
-
+    //Handle new connection
     public void onOpen(WebSocketSession session) {
         connections.add(session);
     }
-
+    //Handle connection loss or close
     public void onClose(WebSocketSession session) {
         connections.remove(session);
     }
@@ -34,5 +34,4 @@ public class MessagesService {
             }
         }
     }
-
 }

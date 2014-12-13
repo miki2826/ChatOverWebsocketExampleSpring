@@ -23,6 +23,7 @@ import org.springframework.web.socket.handler.PerConnectionWebSocketHandler;
 public class WebConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer {
 
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        //Register the websocket handler with SockJS
         registry.addHandler(messagesWebSocketHandler(), "/messages").withSockJS();
     }
 
@@ -35,5 +36,4 @@ public class WebConfig extends WebMvcConfigurerAdapter implements WebSocketConfi
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-
 }

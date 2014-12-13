@@ -9,9 +9,9 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 /**
  * @author michaeld
+ * Simple websocket handler implementation
  */
 public class MessageWebSocketHandler extends TextWebSocketHandler {
-
     @Autowired
     private MessagesService messagesService;
 
@@ -19,23 +19,19 @@ public class MessageWebSocketHandler extends TextWebSocketHandler {
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         messagesService.onOpen(session);
     }
-
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         messagesService.onClose(session);
 
     }
-
     @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
         messagesService.onClose(session);
 
     }
-
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         messagesService.onData(message.getPayload());
     }
-
 }
 
