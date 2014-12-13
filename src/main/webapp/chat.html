@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+</head>
+<body>
+<script src="/javascripts/chat.js"></script>
+<div style="width:350px" class="container center-block">
+    <div class="row">
+        <div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Chat</div>
+            </div>
+            <div class="panel-body">
+                <ul class="chat"></ul>
+            </div>
+            <div class="panel-footer">
+                <div class="input-group"><input id="btn-input" type="text" placeholder="Say something"
+                                                class="messageInput form-control input-sm"><span
+                        class="input-group-btn"><button id="btn-chat" class="sendButton btn btn-primary btn-sm">Send
+                </button></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
