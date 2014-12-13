@@ -1,4 +1,4 @@
-ChatOverWebsocketExampleSpring
+Chat Over Websocket Example With Spring
 ==============================
 
 An example chat app with java server over websockets with spring
